@@ -47,10 +47,11 @@
     r = random(255);
     g = random(255);
     b = random(255);
-    objectDetector.detect(image,gotResult);
+    objectDetector.detect(img,gotResult);
     for(i = 0; i < objects.length; i++)
   {
    document.getElementById("status").innerHTML = "Status : Object detected";
+   document.getElementById("objects").innerHTML = "Number of Object detected is : " + objects.length;
   fill(r,g,b);
   percent = floor(objects[i].confidence * 100);
   text(objects[i].label + " " + percent + "%",objects[i].x + 15 , objects[i].y + 15);
